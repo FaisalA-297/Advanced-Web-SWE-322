@@ -27,6 +27,8 @@ h4 {
 
 <?php
 
+//Faisal AlShedokhi 202011297
+
 $St_names = array("Faisal", "Khalid", "Nawaf", "Abdulaziz");
 
 echo"<h3>Index Array: <h3>";
