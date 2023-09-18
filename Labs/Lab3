@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<style>
+
+ul {
+    color: orange;
+}
+table{
+    border: 1px solid;
+}
+th {
+    border: 2px solid;
+}
+h4 {
+    color: green;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<?php
+
+$St_names = array("Faisal", "Khalid", "Nawaf", "Abdulaziz");
+
+echo"<h3>Index Array: <h3>";
+echo"<h3>SWE 322 Classmates are: <h3>";
+echo"<ul>";
+$st_list = count($St_names);
+
+for($x = 0; $x < $st_list; $x++){
+
+    echo "<li>".$St_names[$x].".</li>";
+}
+echo"</ul>";
+
+echo"<hr>";
+echo"<br>";
+echo"<h3>Associative Array: <h3>";
+
+$courses = array(
+"CIS103" => "Java 1",
+ "CIS104" => "Java 2",
+  "CIS202" => "Data Structure",
+   "CIS221" => "Database");
+
+   echo"<h3>The courses i took are:<h3>";
+   echo"<table border = 3>";
+   echo"<tr>";
+   echo"<th>Course codes</th>";
+   echo"<th>Course names</th>";
+   echo"<tr>";
+
+   foreach($courses as $c=> $c_value){
+       echo"<tr>";
+       echo"<td>$c</td>";
+       echo"<td>$c_value</td>";
+   }
+   echo"</table>";
+   echo"<hr>";
+
+   echo"<h4>I am looking for CIS103<h4>";
+
+?>
+
+</body>
+
+</html>
