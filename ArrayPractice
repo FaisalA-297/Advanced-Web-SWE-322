@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+</head>
+
+<body>
+
+<?php
+
+$a = array(
+"P1" => "Blue",
+ "P2" => "Green",
+  "P3" => "Red",
+   "P4" => "Black");
+
+$value=reset($a);
+
+echo $value;
+echo "<br>";
+
+echo count($a);
+echo"<br>";
+
+foreach($a as $x => $x_value){
+       
+       echo"Key = ".$x." Value = ".$x_value.".";
+       echo"<br>";
+       
+   }
+   echo"<br>";
+   
+   if($a = "Blue") {
+   
+   echo"The color blue is in this array";
+   
+   }
+?>
+
+</body>
+
+</html>
