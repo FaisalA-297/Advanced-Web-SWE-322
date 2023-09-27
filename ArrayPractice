@@ -31,9 +31,9 @@ foreach($a as $x => $x_value){
    }
    echo"<br>";
    
-   if($a = "Blue") {
+   if($a["p1"] = "Blue") {
    
-   echo"The color blue is in this array";
+   echo"The element p1 is Blue";
    
    }
 ?>
