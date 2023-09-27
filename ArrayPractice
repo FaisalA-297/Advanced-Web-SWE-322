@@ -35,7 +35,8 @@ foreach($a as $x => $x_value){
    if($x == "p2") {
    
    echo "$x_vlaue";
-   
+
+   }
    }
 ?>
 
