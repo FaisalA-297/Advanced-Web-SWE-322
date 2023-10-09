@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+<body>
+    
+<?php
+
+//Faisal AlShedokhi 202011297
+
+$db_host = 'localhost:3310';
+$db_user = 'test';
+$db_password = '123456';
+$db_name = 'Lab_db';
+
+$conn = new mysqli($db_host, $db_user, $db_password, $db_name);
+
+if ($conn->connect_error) {
+    die('Connection failed: ' . $conn->connect_error);
+}
+
+$sql = "INSERT INTO 06_Lab (F_name, L_name, S_id, Major) VALUES ('Faisal', 'AlShedokhi', 202011297, 'Software Engineering')";
+
+if ($conn->query($sql) === TRUE) {
+    echo 'Data inserted successfully!';
+} else {
+    echo 'Error inserting data: ' . $conn->error;
+}
+
+$conn->close();
+
+?>
+
+</body>
+</html>
