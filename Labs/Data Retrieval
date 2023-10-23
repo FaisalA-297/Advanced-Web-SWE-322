@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Data Retrieval and Modification </title>
+<style>
+
+table{
+    border: 1px solid;
+}
+th {
+    border: 2px solid;
+}
+
+td {
+    border: 1px solid;
+}
+
+</style>
+
+</head>
+<body>
+    
+<?php
+
+//Faisal AlShedokhi 202011297
+
+$db_host = 'localhost:3307';
+$db_user = 'root';
+$db_password = '';
+$db_name = 'db_name';
+
+$conn = new mysqli($db_host, $db_user, $db_password, $db_name);
+
+if ($conn->connect_error) {
+    die('Connection failed: ' . $conn->connect_error);
+}
+
+    else{
+        
+        echo "Connection successful";
+    
+}
+
+echo "<br>";
+
+$sql = "UPDATE `table_01` SET `col_04`='Computer Engineer' WHERE col_03=202011297";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Record updated successfully";
+} else {
+  echo "Error updating record: " . $conn->error;
+}
+
+
+$query = "SELECT * from table_01";
+$result = mysqli_query($conn, $query);
+
+if ($result) {
+echo "<table>";
+echo "<tr>";
+echo "<th> col_01 </th>";
+echo "<th> col_02 </th>";
+echo "<th> col_03 </th>";
+echo "<th> col_04 </th>";
+echo "</tr>";
+
+While($result_row = mysqli_fetch_row($result)){
+echo "<tr>";
+echo "<td>$result_row[0] </td>";
+echo "<td>$result_row[1] </td>";
+echo "<td> $result_row[2] </td>";
+echo "<td>$result_row[3] </td>";
+echo "</tr>";
+}
+echo "</table>";
+
+}else {
+echo "Error:
+".$query."<br>".mysqli_error($conn);
+}
+
+
+
+
+$conn->close();
+
+?>
+
+</body>
+</html>
