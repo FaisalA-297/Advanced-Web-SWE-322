@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<style>
+
+.aplus {
+    background-color: yellow;
+}
+
+table{
+    border: 1px solid;
+}
+th {
+    border: 2px solid;
+}
+
+td {
+    border: 1px solid;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<?php
+
+class Courses
+{
+    public $courseCode;
+    public $courseName;
+    public $courseDescription;
+    public $grade;
+
+    public function __construct($courseCode, $courseName, $courseDescription, $grade)
+    {
+        $this->courseCode = $courseCode;
+        $this->courseName = $courseName;
+        $this->courseDescription = $courseDescription;
+        $this->grade = $grade;
+    }
+
+    public function setCourseCode($courseCode)
+    {
+        $this->courseCode = $courseCode;
+    }
+
+    public function getCourseCode()
+    {
+        return $this->courseCode;
+    }
+
+    public function setCourseName($courseName)
+    {
+        $this->courseName = $courseName;
+    }
+
+    public function getCourseName()
+    {
+        return $this->courseName;
+    }
+
+    public function setCourseDescription($courseDescription)
+    {
+        $this->courseDescription = $courseDescription;
+    }
+
+    public function getCourseDescription()
+    {
+        return $this->courseDescription;
+    }
+
+    public function setGrade($grade)
+    {
+        $this->grade = $grade;
+    }
+
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
+    public function CheckGrade(){
+        if ($this->grade == "A+")
+            return TRUE;
+        
+        else{
+        return FALSE;
+    }
+    }
+
+    public function getCourseDetails()
+    {
+        return [
+            "courseCode" => $this->courseCode,
+            "courseName" => $this->courseName,
+            "courseDescription" => $this->courseDescription,
+            "grade" => $this->grade,
+        ];
+    }
+}
+
+$courses = [];
+
+$course1 = new Courses("CIS201", "Fundamentals of Web Design", "Course about designing websites using html, css, and JavaScript", "A+");
+$course2 = new Courses("CIS 221", "Introduction to Database Systems", "Using SQL to create database and queries", "A");
+$course3 = new Courses("CIS 104", "Programming Fundamentals II", "Programming using Java", "A");
+
+$courses[] = $course1;
+$courses[] = $course2;
+$courses[] = $course3;
+
+$courses = [
+    $course1,
+    $course2,
+    $course3,
+];
+
+echo "<table>";
+echo "<thead>";
+echo "<tr>";
+echo "<th>Course Code</th>";
+echo "<th>Course Name</th>";
+echo "<th>Course Description</th>";
+echo "<th>Grade</th>";
+echo "</tr>";
+echo "</thead>";
+echo "<tbody>";
+foreach ($courses as $course) {
+    echo "<tr>";
+    echo "<td>" . $course->getCourseCode() . "</td>";
+    echo "<td>" . $course->getCourseName() . "</td>";
+    echo "<td>" . $course->getCourseDescription() . "</td>";
+    echo "<td>" . $course->getGrade() . "</td>";
+
+if ($course->CheckGrade()) {
+    echo '<td class="aplus">';
+} else {
+    echo '<td>';
+}
+
+    echo "</tr>";
+}
+echo "</tbody>";
+echo "</table>";
+
+?>
+
+</body>
+
+</html>
